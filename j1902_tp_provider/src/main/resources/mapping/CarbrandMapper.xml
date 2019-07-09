@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qf.j1902.mapper.CarbrandMapper" >
+  <resultMap id="BaseResultMap" type="com.qf.j1902.pojo.Carbrand" >
+    <id column="brandid" property="brandid" jdbcType="INTEGER" />
+    <result column="brandname" property="brandname" jdbcType="VARCHAR" />
+    <result column="otherbrandname" property="otherbrandname" jdbcType="VARCHAR" />
+    <result column="englishbrandname" property="englishbrandname" jdbcType="VARCHAR" />
+    <result column="countryid" property="countryid" jdbcType="INTEGER" />
+    <result column="logourl" property="logourl" jdbcType="VARCHAR" />
+    <result column="logomeaning" property="logomeaning" jdbcType="VARCHAR" />
+    <result column="firstchar" property="firstchar" jdbcType="VARCHAR" />
+    <result column="nameallspell" property="nameallspell" jdbcType="VARCHAR" />
+    <result column="introduction" property="introduction" jdbcType="VARCHAR" />
+    <result column="salestatus" property="salestatus" jdbcType="VARCHAR" />
+    <result column="isenabled" property="isenabled" jdbcType="VARCHAR" />
+    <result column="isremoved" property="isremoved" jdbcType="VARCHAR" />
+    <result column="createbrandtime" property="createbrandtime" jdbcType="VARCHAR" />
+    <result column="updatebrandtime" property="updatebrandtime" jdbcType="VARCHAR" />
+    <result column="syncbrandtime" property="syncbrandtime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    brandid, brandname, otherbrandname, englishbrandname, countryid, logourl, logomeaning, 
+    firstchar, nameallspell, introduction, salestatus, isenabled, isremoved, createbrandtime, 
+    updatebrandtime, syncbrandtime
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.qf.j1902.pojo.CarbrandExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from carbrand
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from carbrand
+    where brandid = #{brandid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from carbrand
+    where brandid = #{brandid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.qf.j1902.pojo.CarbrandExample" >
+    delete from carbrand
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.qf.j1902.pojo.Carbrand" >
+    insert into carbrand (brandid, brandname, otherbrandname, 
+      englishbrandname, countryid, logourl, 
+      logomeaning, firstchar, nameallspell, 
+      introduction, salestatus, isenabled, 
+      isremoved, createbrandtime, updatebrandtime, 
+      syncbrandtime)
+    values (#{brandid,jdbcType=INTEGER}, #{brandname,jdbcType=VARCHAR}, #{otherbrandname,jdbcType=VARCHAR}, 
+      #{englishbrandname,jdbcType=VARCHAR}, #{countryid,jdbcType=INTEGER}, #{logourl,jdbcType=VARCHAR}, 
+      #{logomeaning,jdbcType=VARCHAR}, #{firstchar,jdbcType=VARCHAR}, #{nameallspell,jdbcType=VARCHAR}, 
+      #{introduction,jdbcType=VARCHAR}, #{salestatus,jdbcType=VARCHAR}, #{isenabled,jdbcType=VARCHAR}, 
+      #{isremoved,jdbcType=VARCHAR}, #{createbrandtime,jdbcType=VARCHAR}, #{updatebrandtime,jdbcType=VARCHAR}, 
+      #{syncbrandtime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.j1902.pojo.Carbrand" >
+    insert into carbrand
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="brandid != null" >
+        brandid,
+      </if>
+      <if test="brandname != null" >
+        brandname,
+      </if>
+      <if test="otherbrandname != null" >
+        otherbrandname,
+      </if>
+      <if test="englishbrandname != null" >
+        englishbrandname,
+      </if>
+      <if test="countryid != null" >
+        countryid,
+      </if>
+      <if test="logourl != null" >
+        logourl,
+      </if>
+      <if test="logomeaning != null" >
+        logomeaning,
+      </if>
+      <if test="firstchar != null" >
+        firstchar,
+      </if>
+      <if test="nameallspell != null" >
+        nameallspell,
+      </if>
+      <if test="introduction != null" >
+        introduction,
+      </if>
+      <if test="salestatus != null" >
+        salestatus,
+      </if>
+      <if test="isenabled != null" >
+        isenabled,
+      </if>
+      <if test="isremoved != null" >
+        isremoved,
+      </if>
+      <if test="createbrandtime != null" >
+        createbrandtime,
+      </if>
+      <if test="updatebrandtime != null" >
+        updatebrandtime,
+      </if>
+      <if test="syncbrandtime != null" >
+        syncbrandtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="brandid != null" >
+        #{brandid,jdbcType=INTEGER},
+      </if>
+      <if test="brandname != null" >
+        #{brandname,jdbcType=VARCHAR},
+      </if>
+      <if test="otherbrandname != null" >
+        #{otherbrandname,jdbcType=VARCHAR},
+      </if>
+      <if test="englishbrandname != null" >
+        #{englishbrandname,jdbcType=VARCHAR},
+      </if>
+      <if test="countryid != null" >
+        #{countryid,jdbcType=INTEGER},
+      </if>
+      <if test="logourl != null" >
+        #{logourl,jdbcType=VARCHAR},
+      </if>
+      <if test="logomeaning != null" >
+        #{logomeaning,jdbcType=VARCHAR},
+      </if>
+      <if test="firstchar != null" >
+        #{firstchar,jdbcType=VARCHAR},
+      </if>
+      <if test="nameallspell != null" >
+        #{nameallspell,jdbcType=VARCHAR},
+      </if>
+      <if test="introduction != null" >
+        #{introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="salestatus != null" >
+        #{salestatus,jdbcType=VARCHAR},
+      </if>
+      <if test="isenabled != null" >
+        #{isenabled,jdbcType=VARCHAR},
+      </if>
+      <if test="isremoved != null" >
+        #{isremoved,jdbcType=VARCHAR},
+      </if>
+      <if test="createbrandtime != null" >
+        #{createbrandtime,jdbcType=VARCHAR},
+      </if>
+      <if test="updatebrandtime != null" >
+        #{updatebrandtime,jdbcType=VARCHAR},
+      </if>
+      <if test="syncbrandtime != null" >
+        #{syncbrandtime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.qf.j1902.pojo.CarbrandExample" resultType="java.lang.Integer" >
+    select count(*) from carbrand
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update carbrand
+    <set >
+      <if test="record.brandid != null" >
+        brandid = #{record.brandid,jdbcType=INTEGER},
+      </if>
+      <if test="record.brandname != null" >
+        brandname = #{record.brandname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.otherbrandname != null" >
+        otherbrandname = #{record.otherbrandname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.englishbrandname != null" >
+        englishbrandname = #{record.englishbrandname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.countryid != null" >
+        countryid = #{record.countryid,jdbcType=INTEGER},
+      </if>
+      <if test="record.logourl != null" >
+        logourl = #{record.logourl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.logomeaning != null" >
+        logomeaning = #{record.logomeaning,jdbcType=VARCHAR},
+      </if>
+      <if test="record.firstchar != null" >
+        firstchar = #{record.firstchar,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nameallspell != null" >
+        nameallspell = #{record.nameallspell,jdbcType=VARCHAR},
+      </if>
+      <if test="record.introduction != null" >
+        introduction = #{record.introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="record.salestatus != null" >
+        salestatus = #{record.salestatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isenabled != null" >
+        isenabled = #{record.isenabled,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isremoved != null" >
+        isremoved = #{record.isremoved,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createbrandtime != null" >
+        createbrandtime = #{record.createbrandtime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updatebrandtime != null" >
+        updatebrandtime = #{record.updatebrandtime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.syncbrandtime != null" >
+        syncbrandtime = #{record.syncbrandtime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update carbrand
+    set brandid = #{record.brandid,jdbcType=INTEGER},
+      brandname = #{record.brandname,jdbcType=VARCHAR},
+      otherbrandname = #{record.otherbrandname,jdbcType=VARCHAR},
+      englishbrandname = #{record.englishbrandname,jdbcType=VARCHAR},
+      countryid = #{record.countryid,jdbcType=INTEGER},
+      logourl = #{record.logourl,jdbcType=VARCHAR},
+      logomeaning = #{record.logomeaning,jdbcType=VARCHAR},
+      firstchar = #{record.firstchar,jdbcType=VARCHAR},
+      nameallspell = #{record.nameallspell,jdbcType=VARCHAR},
+      introduction = #{record.introduction,jdbcType=VARCHAR},
+      salestatus = #{record.salestatus,jdbcType=VARCHAR},
+      isenabled = #{record.isenabled,jdbcType=VARCHAR},
+      isremoved = #{record.isremoved,jdbcType=VARCHAR},
+      createbrandtime = #{record.createbrandtime,jdbcType=VARCHAR},
+      updatebrandtime = #{record.updatebrandtime,jdbcType=VARCHAR},
+      syncbrandtime = #{record.syncbrandtime,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.j1902.pojo.Carbrand" >
+    update carbrand
+    <set >
+      <if test="brandname != null" >
+        brandname = #{brandname,jdbcType=VARCHAR},
+      </if>
+      <if test="otherbrandname != null" >
+        otherbrandname = #{otherbrandname,jdbcType=VARCHAR},
+      </if>
+      <if test="englishbrandname != null" >
+        englishbrandname = #{englishbrandname,jdbcType=VARCHAR},
+      </if>
+      <if test="countryid != null" >
+        countryid = #{countryid,jdbcType=INTEGER},
+      </if>
+      <if test="logourl != null" >
+        logourl = #{logourl,jdbcType=VARCHAR},
+      </if>
+      <if test="logomeaning != null" >
+        logomeaning = #{logomeaning,jdbcType=VARCHAR},
+      </if>
+      <if test="firstchar != null" >
+        firstchar = #{firstchar,jdbcType=VARCHAR},
+      </if>
+      <if test="nameallspell != null" >
+        nameallspell = #{nameallspell,jdbcType=VARCHAR},
+      </if>
+      <if test="introduction != null" >
+        introduction = #{introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="salestatus != null" >
+        salestatus = #{salestatus,jdbcType=VARCHAR},
+      </if>
+      <if test="isenabled != null" >
+        isenabled = #{isenabled,jdbcType=VARCHAR},
+      </if>
+      <if test="isremoved != null" >
+        isremoved = #{isremoved,jdbcType=VARCHAR},
+      </if>
+      <if test="createbrandtime != null" >
+        createbrandtime = #{createbrandtime,jdbcType=VARCHAR},
+      </if>
+      <if test="updatebrandtime != null" >
+        updatebrandtime = #{updatebrandtime,jdbcType=VARCHAR},
+      </if>
+      <if test="syncbrandtime != null" >
+        syncbrandtime = #{syncbrandtime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where brandid = #{brandid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.j1902.pojo.Carbrand" >
+    update carbrand
+    set brandname = #{brandname,jdbcType=VARCHAR},
+      otherbrandname = #{otherbrandname,jdbcType=VARCHAR},
+      englishbrandname = #{englishbrandname,jdbcType=VARCHAR},
+      countryid = #{countryid,jdbcType=INTEGER},
+      logourl = #{logourl,jdbcType=VARCHAR},
+      logomeaning = #{logomeaning,jdbcType=VARCHAR},
+      firstchar = #{firstchar,jdbcType=VARCHAR},
+      nameallspell = #{nameallspell,jdbcType=VARCHAR},
+      introduction = #{introduction,jdbcType=VARCHAR},
+      salestatus = #{salestatus,jdbcType=VARCHAR},
+      isenabled = #{isenabled,jdbcType=VARCHAR},
+      isremoved = #{isremoved,jdbcType=VARCHAR},
+      createbrandtime = #{createbrandtime,jdbcType=VARCHAR},
+      updatebrandtime = #{updatebrandtime,jdbcType=VARCHAR},
+      syncbrandtime = #{syncbrandtime,jdbcType=VARCHAR}
+    where brandid = #{brandid,jdbcType=INTEGER}
+  </update>
+</mapper>
