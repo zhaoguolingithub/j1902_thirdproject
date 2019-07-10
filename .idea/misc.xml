@@ -7,6 +7,11 @@
         <option value="$PROJECT_DIR$/j1902_tp_provider/pom.xml" />
         <option value="$PROJECT_DIR$/j1902_tp_eurekaserver/pom.xml" />
         <option value="$PROJECT_DIR$/j1902_tp_loginandreg/pom.xml" />
+        <option value="$PROJECT_DIR$/j1902_tp_brandmanager/pom.xml" />
+        <option value="$PROJECT_DIR$/j1902_tp_usermanager/pom.xml" />
+        <option value="$PROJECT_DIR$/j1902_tp_common/pom.xml" />
+        <option value="$PROJECT_DIR$/j1902_tp_login/pom.xml" />
+        <option value="$PROJECT_DIR$/j1902_tp_register/pom.xml" />
       </list>
     </option>
   </component>

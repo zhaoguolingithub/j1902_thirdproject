@@ -6,18 +6,28 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="j1902_tp_brandmanager" />
+        <module name="j1902_tp_common" />
         <module name="j1902_tp_eurekaserver" />
+        <module name="j1902_tp_login" />
         <module name="j1902_tp_loginandreg" />
         <module name="j1902_tp_pojo" />
         <module name="j1902_tp_provider" />
+        <module name="j1902_tp_register" />
+        <module name="j1902_tp_usermanager" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="j1902_thirdproject" target="1.5" />
+      <module name="j1902_tp_brandmanager" target="1.8" />
+      <module name="j1902_tp_common" target="1.7" />
       <module name="j1902_tp_eurekaserver" target="1.8" />
+      <module name="j1902_tp_login" target="1.8" />
       <module name="j1902_tp_loginandreg" target="1.8" />
       <module name="j1902_tp_pojo" target="1.5" />
       <module name="j1902_tp_provider" target="1.8" />
+      <module name="j1902_tp_register" target="1.8" />
+      <module name="j1902_tp_usermanager" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

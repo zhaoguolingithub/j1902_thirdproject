@@ -3,10 +3,16 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/j1902_thirdproject.iml" filepath="$PROJECT_DIR$/j1902_thirdproject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/j1902_tp_brandmanager/j1902_tp_brandmanager.iml" filepath="$PROJECT_DIR$/j1902_tp_brandmanager/j1902_tp_brandmanager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/j1902_tp_common/j1902_tp_common.iml" filepath="$PROJECT_DIR$/j1902_tp_common/j1902_tp_common.iml" />
+      <module fileurl="file://E:\idea\ideaProjects\j1902_thirdproject\j1902_tp_common\j1902_tp_common.iml" filepath="E:\idea\ideaProjects\j1902_thirdproject\j1902_tp_common\j1902_tp_common.iml" />
       <module fileurl="file://$PROJECT_DIR$/j1902_tp_eurekaserver/j1902_tp_eurekaserver.iml" filepath="$PROJECT_DIR$/j1902_tp_eurekaserver/j1902_tp_eurekaserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/j1902_tp_login/j1902_tp_login.iml" filepath="$PROJECT_DIR$/j1902_tp_login/j1902_tp_login.iml" />
       <module fileurl="file://$PROJECT_DIR$/j1902_tp_loginandreg/j1902_tp_loginandreg.iml" filepath="$PROJECT_DIR$/j1902_tp_loginandreg/j1902_tp_loginandreg.iml" />
       <module fileurl="file://$PROJECT_DIR$/j1902_tp_pojo/j1902_tp_pojo.iml" filepath="$PROJECT_DIR$/j1902_tp_pojo/j1902_tp_pojo.iml" />
       <module fileurl="file://$PROJECT_DIR$/j1902_tp_provider/j1902_tp_provider.iml" filepath="$PROJECT_DIR$/j1902_tp_provider/j1902_tp_provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/j1902_tp_register/j1902_tp_register.iml" filepath="$PROJECT_DIR$/j1902_tp_register/j1902_tp_register.iml" />
+      <module fileurl="file://$PROJECT_DIR$/j1902_tp_usermanager/j1902_tp_usermanager.iml" filepath="$PROJECT_DIR$/j1902_tp_usermanager/j1902_tp_usermanager.iml" />
     </modules>
   </component>
 </project>

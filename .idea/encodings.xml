@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/j1902_tp_brandmanager" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/j1902_tp_common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/j1902_tp_common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/j1902_tp_eurekaserver" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/j1902_tp_login" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/j1902_tp_loginandreg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/j1902_tp_provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/j1902_tp_register" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/j1902_tp_usermanager" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

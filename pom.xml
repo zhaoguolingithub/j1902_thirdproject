@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>j1902_tp_pojo</module>
+        <module>j1902_tp_common</module>
     </modules>
 
 
